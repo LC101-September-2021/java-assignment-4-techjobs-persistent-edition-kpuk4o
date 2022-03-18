@@ -1,6 +1,12 @@
 package org.launchcode.techjobs.persistent.models;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Job extends AbstractEntity {
@@ -11,21 +17,20 @@ public class Job extends AbstractEntity {
     @ManyToMany
     private List<Skill> skills = new ArrayList<>();
 
+
+
     public Job(Employer employer, List<Skill> skills) {
         this.employer = employer;
         this.skills = skills;
     }
 
-    public Job() {
-    }
+    public Job() {}
 
-    // Getters and setters.
-
-    public String getEmployer() {
+    public Employer getEmployer() {
         return employer;
     }
 
-    public void setEmployer(String employer) {
+    public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
