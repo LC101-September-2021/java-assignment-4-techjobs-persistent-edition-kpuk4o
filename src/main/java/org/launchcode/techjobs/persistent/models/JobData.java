@@ -2,14 +2,10 @@ package org.launchcode.techjobs.persistent.models;
 
 import java.util.ArrayList;
 
-// This is a change made in sandbox.
-
 /**
  * Created by LaunchCode
  */
 public class JobData {
-
-
     /**
      * Returns the results of searching the Jobs data by field and search term.
      *
@@ -54,7 +50,6 @@ public class JobData {
         } else {
             theValue = job.getSkills().toString();
         }
-
         return theValue;
     }
 
@@ -81,12 +76,7 @@ public class JobData {
             } else if (job.toString().toLowerCase().contains(lower_val)) {
                 results.add(job);
             }
-
         }
-
         return results;
     }
-
-
 }
-
